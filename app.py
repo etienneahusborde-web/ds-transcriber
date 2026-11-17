@@ -13,7 +13,12 @@ from pathlib import Path
 from flask import Flask, abort, jsonify, render_template, request, send_file
 from werkzeug.exceptions import RequestEntityTooLarge
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder=".",
+    static_folder=".",
+    static_url_path="/static"
+)
 app.config['MAX_CONTENT_LENGTH'] = int(os.getenv('MAX_UPLOAD_MB', '12')) * 1024 * 1024
 app.config['JSON_AS_ASCII'] = False
 
