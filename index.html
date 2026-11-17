@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DS2 Transcriber</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main class="card"><div class="tag">TRANSCRIPTION AUDIO</div><h1>DS2 Transcriber</h1>
+<p class="subtitle">Convertissez vos enregistrements DS2 et DSS en texte et en sous-titres, depuis votre navigateur.</p>
+<form id="form"><label class="drop" for="file"><span class="icon">♫</span><strong id="file-label">Choisir un fichier DS2 ou DSS</strong><span>Cliquer pour parcourir vos fichiers</span><input id="file" type="file" accept=".ds2,.dss" required></label>
+<div class="settings"><span>🌐 Français</span><span>✦ Whisper Tiny</span></div><button id="submit" type="submit">Convertir et transcrire →</button></form>
+<p id="message" class="message" role="status" aria-live="polite"></p>
+<div id="working" hidden><div class="spinner"></div><p id="step">Traitement en cours…</p><small>Ce traitement peut prendre plusieurs minutes. Gardez cet onglet ouvert.</small></div>
+<section id="results" hidden><h2>Votre transcription</h2><textarea id="text" readonly aria-label="Transcription"></textarea><div class="downloads"><a id="txt">↓ Texte (.txt)</a><a id="srt">↓ Sous-titres (.srt)</a><a id="wav">↓ Audio (.wav)</a></div></section>
+<footer>Prototype gratuit : maximum {{ max_mb }} Mo et {{ max_minutes }} minutes d'audio. Un seul traitement simultané. Les fichiers sont temporaires ; évitez les enregistrements confidentiels.</footer>
+</main><script src="/static/app.js"></script></body></html>

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ds2-transcriber
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MAX_UPLOAD_MB
+        value: 12
+      - key: MAX_AUDIO_SECONDS
+        value: 600
+      - key: WHISPER_THREADS
+        value: 2
+      - key: WEB_CONCURRENCY
+        value: 1
