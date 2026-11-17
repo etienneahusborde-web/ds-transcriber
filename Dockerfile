@@ -26,7 +26,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py ./
-COPY templates/ ./templates/
-COPY static/ ./static/
+COPY index.html ./
+COPY app.js ./
+COPY style.css ./
 ENV PORT=10000
 CMD ["sh", "-c", "exec gunicorn -w 1 --threads 4 --timeout 60 -b 0.0.0.0:${PORT} app:app"]
